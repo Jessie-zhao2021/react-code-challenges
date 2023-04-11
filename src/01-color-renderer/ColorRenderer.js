@@ -17,11 +17,21 @@ const colors = [{
   name: 'Tart Orange'
 }]
 
-export default function ColorRenderer () {
+
+// const element = colors.map(color => <Color key = {color.hex} name = {color.name} hex = {color.hex} />)
+
+export default function ColorRenderer ({colorRendererPropSetColor}) {
+
   return (
-    <h2>
-      Use the Color component to render each
-       item in the colors array on the page!
-    </h2>
+    <>{
+      colors.map(color => <Color key = {color.hex} name = {color.name} hex = {color.hex} makeMode={colorRendererPropSetColor} />)
+    }
+    </>
+    
+    
+    // <h2>
+    //   Use the Color component to render each
+    //    item in the colors array on the page!
+    // </h2>
   )
 }
