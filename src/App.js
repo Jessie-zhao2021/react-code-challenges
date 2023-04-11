@@ -10,10 +10,14 @@ function App () {
   function lightMode(){
     setMode(false)
   }
+  function changeMode(target) {
+    if (target==='dark') setMode(true)
+    else setMode(false)
+  }
   return (
     // <div style={{backgroundColor: Mode ? "black" : "white"}}>
     <div className={Mode ? "dark-mode" : ""}>
-      <DarkMode darkMode={darkMode} lightMode={lightMode}/>
+      <DarkMode toggle={changeMode} darkMode={darkMode} lightMode={lightMode}/>
       wertyui
     </div>
   )
